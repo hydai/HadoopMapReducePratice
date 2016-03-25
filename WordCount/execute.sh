@@ -4,6 +4,7 @@
 #hadoop jar WordCount.jar wordcount.WordCount /user/shared/WordCount/Input /user/TA/WordCount/Output
 #hdfs dfs -cat /user/TA/WordCount/Output/part-*
 
-hdfs dfs -rm -r {$your_hadoop_output_directory}
-hadoop jar WordCount.jar wordcount.WordCount /user/shared/WordCount/Input {$your_hadoop_output_directory}
-hdfs dfs -cat {$your_hadoop_output_directory}/part-*
+export HADOOP_HOME=/home/cluster33/Disk/hadoop-2.7.2
+$HADOOP_HOME/bin/hdfs dfs -rm -r /lab4/WordCount/output
+$HADOOP_HOME/bin/hadoop jar WordCount.jar wordcount.WordCount /lab4/WordCount/input /lab4/WordCount/output
+$HADOOP_HOME/bin/hdfs dfs -cat /lab4/WordCount/output/part-*

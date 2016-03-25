@@ -21,11 +21,11 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 			// we only need to handle Aa~Zz
 			String toProcess = itr.nextToken();
 
-            if (toProcess[0] >= 'A'
-                    && toProcess[0] <= 'Z'
-                    || toProcess[0] >= 'a'
-                    && toProcess[0] <= 'z') {
-                String s = "" + toProcess[0];
+            if (toProcess.charAt(0) >= 'A'
+                    && toProcess.charAt(0) <= 'Z'
+                    || toProcess.charAt(0) >= 'a'
+                    && toProcess.charAt(0) <= 'z') {
+                String s = "" + toProcess.charAt(0);
                 context.write(new Text(s), one);
                     }
 			// create <K, V> pair

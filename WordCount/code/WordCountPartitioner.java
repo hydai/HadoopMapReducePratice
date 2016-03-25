@@ -11,11 +11,10 @@ public class WordCountPartitioner extends Partitioner<Text, IntWritable> {
         if (numReduceTasks == 0)
             return 0;
         String s = key.toString();
-        if (s[0] >= 'A' && s[0] <= 'Z')
-            return 1 % numReduceTasks;
+        if (s.charAt(0) >= 'A' && s.charAt(0) <= 'G'
+						|| s.charAt(0) >= 'a' && s.charAt(0) <= 'g')
+            return 0 % numReduceTasks;
         else
-            return 2 % numReduceTasks;
-
-		return 0;
+            return 1 % numReduceTasks;
 	}
 }

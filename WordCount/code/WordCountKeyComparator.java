@@ -18,7 +18,7 @@ public class WordCountKeyComparator extends WritableComparator {
         char c2 = key2.toString().charAt(0);
         char c1u = Character.toUpperCase(c1);
         char c2u = Character.toUpperCase(c2);
-        // TODO Order by A -> a -> B -> b ....
+        // Order by A -> a -> B -> b ....
         if (c1 == c2)
             return 0;
         if (c1u > c2u)
@@ -31,6 +31,5 @@ public class WordCountKeyComparator extends WritableComparator {
             else
                 return -1;
         }
-        return 0;
     }
 }

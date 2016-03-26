@@ -6,5 +6,5 @@
 
 export HADOOP_HOME=/home/cluster33/Disk/hadoop-2.7.2
 $HADOOP_HOME/bin/hdfs dfs -rm -r /lab4/CalAvg/output
-$HADOOP_HOME/bin/hadoop jar CalculateAverage.jar calculateAverage.CalculateAverage /lab4/CalAvg/input /lab4/CalAvg/output
+$HADOOP_HOME/bin/hadoop jar CalculateAverage.jar calculateaverage.CalculateAverage /lab4/CalAvg/input /lab4/CalAvg/output
 $HADOOP_HOME/bin/hdfs dfs -cat /lab4/CalAvg/output/part-*

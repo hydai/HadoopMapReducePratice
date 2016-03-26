@@ -1,4 +1,4 @@
-package calculateAverage;
+package calculateaverage;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -27,7 +27,7 @@ public class CalculateAverage {
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(SumCountPair.class);
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(SumCountPair.class);
+		job.setOutputValueClass(DoubleWritable.class);
 		
 		// set the number of reducer
 		job.setNumReduceTasks(2);

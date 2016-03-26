@@ -1,4 +1,4 @@
-package calculateAverage;
+package calculateaverage;
 
 import java.io.IOException;
 
@@ -12,9 +12,10 @@ public class CalculateAverageCombiner extends Reducer<Text,SumCountPair,Text,Sum
 		int sum = 0;
 		int count = 0;
 		for (SumCountPair val: values) {
-			//TODO: agrregate the result from mapper
+			sum += val.getSum();
+			count += val.getCount();
 		}
-		//context.write(K,V)
+		context.write(key, new SumCountPair(sum, count));
 		
 	}
 }

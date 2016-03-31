@@ -14,15 +14,6 @@ public class CalculateAverageKeyComparator extends WritableComparator {
         Text key1 = (Text) o1;
         Text key2 = (Text) o2;
 
-        char c1 = key1.toString().charAt(0);
-        char c2 = key2.toString().charAt(0);
-        if (c1 == c2)
-            return 0;
-        else {
-            if (c1 > c2)
-                return 1;
-            else
-                return -1;
-        }
+	return key1.toString().compareTo(key2.toString());
     }
 }
